@@ -1,0 +1,35 @@
+import streamlit as st
+import os
+from groq import Groq
+
+st.set_page_config(page_title="ReplyGenius", page_icon="💬")
+
+# --- CONFIG ---
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])  # Get free key: groq.com
+
+st.title("💬 ReplyGenius – Never Write a Review Reply Again")
+st.write("Paste any Google/Yell/TripAdvisor review. Get a perfect reply in 3s.")
+
+review = st.text_area("Paste the review here:", height=150)
+
+tone = st.selectbox("Tone", ["Warm & Grateful", "Professional & Apologetic", "Playful & Fun"])
+business_name = st.text_input("Your Business Name", "The Codfather Fish & Chips")
+
+if st.button("Generate Perfect Reply"):
+    with st.spinner("Crafting..."):
+        prompt = f"""
+        You are a world-class community manager for {business_name}.
+        Write a polite, unique, human-sounding reply to this review.
+        Use the customer's name if mentioned. Reference 1-2 specific details.
+        Tone: {tone}
+
+        REVIEW: "{review}"
+
+        REPLY (under 100 words):
+        """
+
+        chat_completion = client.chat.completions.create(
+            messages=[{"role": "user", "content": prompt}],
+            model="llama3-8b-8192",
+            temperature=0.7,
+            max_tokens=150
