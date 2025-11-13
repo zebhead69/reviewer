@@ -32,7 +32,7 @@ col1, col2 = st.columns([3, 1])
 with col1:
     review = st.text_area("📝 Paste the customer review:", height=120, placeholder="e.g. The pizza was cold but staff were nice...")
 with col2:
-    tone = st.selectbox("🎭 Tone", ["Warm & Grateful", "Professional & Apologetic", "Playful & Fun"])
+    tone = st.selectbox("🎭 Tone", ["Warm & Grateful", "Professional & Empathetic", "Playful & Fun", "Confident & Assertive", ])
     business_name = st.text_input("🏪 Business Name", "The Codfather")
 
 # --- GENERATE BUTTON ---
@@ -46,7 +46,7 @@ if st.button("🚀 Generate Perfect Reply", type="primary"):
             
             prompt = f"""
             You are a world-class community manager for {business_name}.
-            Write a polite, unique, human-sounding reply to this review.
+            Write a polite, unique, human-sounding reply to this review using British-English.
             Use the customer's name if mentioned. Reference 1-2 specific details.
             Tone: {tone}
             
