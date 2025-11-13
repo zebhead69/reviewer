@@ -12,14 +12,14 @@ st.write("Paste any Google/Yell/TripAdvisor review. Get a perfect reply in 3s.")
 
 review = st.text_area("Paste the review here:", height=150)
 
-tone = st.selectbox("Tone", ["Warm & Grateful", "Professional & Apologetic", "Playful & Fun"])
+tone = st.selectbox("Tone", ["Warm & Grateful", "Professional & Empathetic", "Playful & Fun", Confident & Assertive"])
 business_name = st.text_input("Your Business Name", "The Codfather Fish & Chips")
 
 if st.button("Generate Perfect Reply"):
     with st.spinner("Crafting..."):
         prompt = f"""
         You are a world-class community manager for {business_name}.
-        Write a polite, unique, human-sounding reply to this review.
+        Write a polite, unique, human-sounding reply to this review using British-English.
         Use the customer's name if mentioned. Reference 1-2 specific details.
         Tone: {tone}
 
