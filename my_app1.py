@@ -11,7 +11,7 @@ st.set_page_config(page_title="ReplyGenius", page_icon="💬", layout="centered"
 st.markdown("""
 <style>
     .main {background-color: #f8f9fa; padding: 2rem; border-radius: 15px;}
-    .stButton>button {background: #ff4b4b; color: white; border-radius: 12px; padding: 0.6rem 1.2rem; font-weight: bold;}
+    .stButton>button {background: #950606; color: white; border-radius: 12px; padding: 0.6rem 1.2rem; font-weight: bold;}
     .stTextArea>div>textarea {border-radius: 12px; border: 2px solid #e0e0e0;}
     .reply-box {background: #fff3cd; padding: 1rem; border-radius: 12px; border-left: 5px solid #ff4b4b; margin: 1rem 0;}
     .copy-btn {background: #28a745; color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer;}
